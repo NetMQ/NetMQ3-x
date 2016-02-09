@@ -35,6 +35,7 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3.2.2")]
 [assembly: AssemblyFileVersion("3.3.2.2")]
+[assembly: AssemblyInformationalVersion("3.3.2.2")]
 
 [assembly: InternalsVisibleTo("NetMQ.Tests,PublicKey=" +
     "0024000004800000940000000602000000240000525341310004000001000100c90e1ebf352af7" +
