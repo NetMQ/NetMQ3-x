@@ -185,7 +185,7 @@ namespace NetMQ
         /// Add the Data of the given Blob, as a new frame, onto this NetMQMessage.
         /// </summary>
         /// <param name="blob">the Blob whose data is to be added as a new frame</param>
-        [Obsolete("Use NetMQFrame instead of blobs")]
+        [Obsolete("Use NetMQFrame instead of blobs. This will be removed in NetMQ 4.0.")]
         public void Append([NotNull] Blob blob)
         {
             Append(blob.Data);
@@ -303,7 +303,7 @@ namespace NetMQ
         /// the collection of frames of this NetMQMessage,
         /// pushing all of the other frames upward in index-position.
         /// </remarks>
-        [Obsolete("Use NetMQFrame instead of blobs")]
+        [Obsolete("Use NetMQFrame instead of blobs. This will be removed in NetMQ 4.0.")]
         public void Push([NotNull] Blob blob)
         {
             Push(blob.Data);

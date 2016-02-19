@@ -12,7 +12,7 @@ namespace NetMQ
     /// The Poller class provides for managing a set of one or more sockets and being alerted when one of them has a message
     /// ready.
     /// </summary>
-    [Obsolete("Use NetMQPoller instead")]
+    [Obsolete("Use NetMQPoller instead. This will be removed in NetMQ 4.0.")]
     public class Poller : INetMQPoller, ISocketPollableCollection, IDisposable
     {
         /// <summary>
@@ -367,7 +367,7 @@ namespace NetMQ
         /// <summary>
         /// Poll till Cancel or CancelAndJoin is called. This is a blocking method.
         /// </summary>
-        [Obsolete("Use PollTillCancelled instead")]
+        [Obsolete("Use PollTillCancelled instead. This will be removed in NetMQ 4.0.")]
         public void Start()
         {
             PollTillCancelled();
@@ -378,7 +378,7 @@ namespace NetMQ
         /// If it doesn't stop within 20 seconds, it times-out anyway and returns.
         /// </summary>
         /// <param name="waitForCloseToComplete">if true, this method will block until the poller is fully stopped</param>
-        [Obsolete("Use Cancel(if your argument was false) or CancelAndJoin (if your argument was true)")]
+        [Obsolete("Use Cancel(if your argument was false) or CancelAndJoin (if your argument was true). This will be removed in NetMQ 4.0.")]
         public void Stop(bool waitForCloseToComplete)
         {
             Cancel(waitForCloseToComplete);
@@ -388,7 +388,7 @@ namespace NetMQ
         /// Stop the poller job. This returns after waiting for that thread to stop.
         /// This is equivalent to calling CancelAndJoin.
         /// </summary>
-        [Obsolete("Use CancelAndJoin")]
+        [Obsolete("Use CancelAndJoin. This will be removed in NetMQ 4.0.")]
         public void Stop()
         {
             Cancel(true);

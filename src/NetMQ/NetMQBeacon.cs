@@ -260,7 +260,7 @@ namespace NetMQ
         /// Create a new NetMQBeacon, contained within the given context.
         /// </summary>
         /// <param name="context">the NetMQContext to contain this new socket</param>
-        [Obsolete("Use non context version")]
+        [Obsolete("Use non context version. This will be removed in NetMQ 4.0.")]
         public NetMQBeacon([NotNull] NetMQContext context)
         {
             m_actor = NetMQActor.Create(context, new Shim());

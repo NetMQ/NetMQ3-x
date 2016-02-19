@@ -7,7 +7,7 @@ namespace NetMQ
     /// ErrorPollingException is an Exception that had been used within the message-queueing system to signal polling-related errors.
     /// Use one of the NetMQException-derived exception classes instead.
     /// </summary>
-    [Obsolete]
+    [Obsolete("This exception is unused in NetMQ and will be removed in NetMQ 4.0.")]
     public class ErrorPollingException : Exception
     {
         /// <summary>

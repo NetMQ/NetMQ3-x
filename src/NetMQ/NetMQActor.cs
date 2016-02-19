@@ -234,7 +234,7 @@ namespace NetMQ
         /// <param name="context">the context for this actor to live within</param>
         /// <param name="shimHandler">an <c>IShimHandler</c> that provides the Run method</param>
         /// <returns>the newly-created <c>NetMQActor</c></returns>
-        [Obsolete("Use non context version")]
+        [Obsolete("Use non context version. This will be removed in NetMQ 4.0.")]
         [NotNull]
         public static NetMQActor Create([NotNull] NetMQContext context, [NotNull] IShimHandler shimHandler)
         {
@@ -248,7 +248,7 @@ namespace NetMQ
         /// <param name="action">a <c>ShimAction</c> - delegate for the action to perfrom</param>
         /// <param name="state">the state-information - of the generic type T</param>
         /// <returns>the newly-created <c>NetMQActor</c></returns>
-        [Obsolete("Use non context version")]
+        [Obsolete("Use non context version. This will be removed in NetMQ 4.0.")]
         [NotNull]
         public static NetMQActor Create<T>([NotNull] NetMQContext context, [NotNull] ShimAction<T> action, T state)
         {
@@ -261,7 +261,7 @@ namespace NetMQ
         /// <param name="context">the context for this actor to live within</param>
         /// <param name="action">a <c>ShimAction</c> - delegate for the action to perform</param>
         /// <returns>the newly-created <c>NetMQActor</c></returns>
-        [Obsolete("Use non context version")]
+        [Obsolete("Use non context version. This will be removed in NetMQ 4.0.")]
         [NotNull]
         public static NetMQActor Create([NotNull] NetMQContext context, [NotNull] ShimAction action)
         {
@@ -297,7 +297,7 @@ namespace NetMQ
         /// <exception cref="TerminatingException">The socket has been stopped.</exception>
         /// <exception cref="FaultException"><paramref name="msg"/> is not initialised.</exception>
         /// <exception cref="AgainException">The send operation timed out.</exception>
-        [Obsolete("Use Send(ref Msg,bool) or TrySend(ref Msg,TimeSpan,bool) instead.")]
+        [Obsolete("Use Send(ref Msg,bool) or TrySend(ref Msg,TimeSpan,bool) instead. This will be removed in NetMQ 4.0.")]
         public void Send(ref Msg msg, SendReceiveOptions options)
         {
             m_self.Send(ref msg, options);
@@ -321,7 +321,7 @@ namespace NetMQ
         #region IReceivingSocket
 
         /// <exception cref="AgainException">The receive operation timed out.</exception>
-        [Obsolete("Use Receive(ref Msg) or TryReceive(ref Msg,TimeSpan) instead.")]
+        [Obsolete("Use Receive(ref Msg) or TryReceive(ref Msg,TimeSpan) instead. This will be removed in NetMQ 4.0.")]
         public void Receive(ref Msg msg, SendReceiveOptions options)
         {
             m_self.Receive(ref msg, options);

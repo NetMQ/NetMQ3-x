@@ -36,7 +36,7 @@ namespace NetMQ
         /// no sense here and is ignored.</param>
         /// <exception cref="AgainException">No message was available within the allowed timeout period. Try again.
         /// </exception>
-        [Obsolete("Use Receive(ref Msg) or TryReceive(ref Msg,TimeSpan) instead.")]
+        [Obsolete("Use Receive(ref Msg) or TryReceive(ref Msg,TimeSpan) instead. This will be removed in NetMQ 4.0.")]
         void Receive(ref Msg msg, SendReceiveOptions options);
 
         /// <summary>

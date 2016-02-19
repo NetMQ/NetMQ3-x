@@ -8,7 +8,7 @@ namespace NetMQ
     /// or the SendMore bit, set.
     /// </summary>
     [Flags]
-    [Obsolete("New Receive/Send API doesn't use SendReceiveOptions")]
+    [Obsolete("New Receive/Send API doesn't use SendReceiveOptions. This will be removed in NetMQ 4.0.")]
     public enum SendReceiveOptions
     {
         /// <summary>
@@ -27,7 +27,7 @@ namespace NetMQ
         SendMore = 2,
 
         // Deprecated aliases
-        [Obsolete("Use DontWait instead")]
+        [Obsolete("Use DontWait instead. This will be removed in NetMQ 4.0.")]
         NoBlock = DontWait
     }
 }

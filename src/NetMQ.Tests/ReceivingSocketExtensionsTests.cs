@@ -14,7 +14,7 @@ namespace NetMQ.Tests
         [Obsolete]
         public SendReceiveOptions LastOptions { get; private set; }
 
-        [Obsolete("Use Receive(ref Msg) or TryReceive(ref Msg,TimeSpan) instead.")]
+        [Obsolete("Use Receive(ref Msg) or TryReceive(ref Msg,TimeSpan) instead. This will be removed in NetMQ 4.0.")]
         public void Receive(ref Msg msg, SendReceiveOptions options)
         {
             LastOptions = options;

@@ -9,7 +9,7 @@ namespace NetMQ.InProcActors
     /// T is the initial state that the <c>Actor</c> will provide.
     /// This interface specifies the methods Initialize and RunPipeline.
     /// </summary>
-    [Obsolete("Use non generic NetMQActor and IShimHandler")]
+    [Obsolete("Use non generic NetMQActor and IShimHandler. This will be removed in NetMQ 4.0.")]
     public interface IShimHandler<in T>
     {
         /// <summary>

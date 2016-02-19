@@ -162,7 +162,7 @@ namespace NetMQ.Core
         /// <summary>
         /// Specifies the amount of time after which a synchronous receive call will time out.
         /// </summary>
-        [Obsolete("Pass a TimeSpan value directly to socket receive methods instead.")]
+        [Obsolete("Pass a TimeSpan value directly to socket receive methods instead. This will be removed in NetMQ 4.0.")]
         ReceiveTimeout = 27,
 
         /// <summary>

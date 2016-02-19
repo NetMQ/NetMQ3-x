@@ -40,7 +40,7 @@ namespace NetMQ
         /// <summary>
         /// Unused.
         /// </summary>
-        [Obsolete("This property doesn't effect NetMQ anymore")]
+        [Obsolete("This property doesn't effect NetMQ anymore. This will be removed in NetMQ 4.0.")]
         public bool CopyMessages
         {
             get { return false; }
@@ -92,7 +92,7 @@ namespace NetMQ
         /// Get or set the size of the receive buffer for the specified socket.
         /// A value of zero means that the OS default is in effect.
         /// </summary>
-        [Obsolete("Use ReceiveBuffer instead")]
+        [Obsolete("Use ReceiveBuffer instead. This will be removed in NetMQ 4.0.")]
         public int ReceivevBuffer
         {
             get { return ReceiveBuffer; }
@@ -236,7 +236,7 @@ namespace NetMQ
         /// <summary>
         /// Get or set the amount of time after which a synchronous receive call will time out.
         /// </summary>
-        [Obsolete("Pass a TimeSpan value directly to socket receive methods instead.")]
+        [Obsolete("Pass a TimeSpan value directly to socket receive methods instead. This will be removed in NetMQ 4.0.")]
         public TimeSpan ReceiveTimeout
         {
             get { return m_socket.GetSocketOptionTimeSpan(ZmqSocketOption.ReceiveTimeout); }
@@ -249,7 +249,7 @@ namespace NetMQ
         /// A value of -1 means to block until the message is sent.
         /// TODO: May need to update this explanation.
         /// </summary>
-        [Obsolete("Pass a TimeSpan value directly to socket send methods instead.")]
+        [Obsolete("Pass a TimeSpan value directly to socket send methods instead. This will be removed in NetMQ 4.0.")]
         public TimeSpan SendTimeout
         {
             get { return m_socket.GetSocketOptionTimeSpan(ZmqSocketOption.SendTimeout); }
@@ -270,7 +270,7 @@ namespace NetMQ
         /// Get the last endpoint bound for TCP and IPC transports.
         /// The returned value will be a string in the form of a ZMQ DSN.
         /// </summary>
-        [Obsolete("Use LastEndpoint instead")]
+        [Obsolete("Use LastEndpoint instead. This will be removed in NetMQ 4.0.")]
         [CanBeNull]
         public string GetLastEndpoint
         {
@@ -319,7 +319,7 @@ namespace NetMQ
         /// <summary>
         /// Unused
         /// </summary>
-        [Obsolete("This option is not supported and has no effect")]
+        [Obsolete("This option is not supported and has no effect. This will be removed in NetMQ 4.0.")]
         public int TcpKeepaliveCnt
         {
             set { /* m_socket.SetSocketOption(ZmqSocketOption.TcpKeepaliveCnt, value); */ }
@@ -354,7 +354,7 @@ namespace NetMQ
             set { m_socket.SetSocketOptionTimeSpan(ZmqSocketOption.TcpKeepaliveIntvl, value); }
         }
 
-        [Obsolete("This feature has not been implemented and will be removed.")]
+        [Obsolete("This feature has not been implemented and will be removed in NetMQ 4.0.")]
         public string TcpAcceptFilter
         {
             set { }

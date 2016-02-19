@@ -9,7 +9,7 @@ using NetMQ.Sockets;
 
 namespace NetMQ
 {
-    [Obsolete("Use NetMQPoller instead")]
+    [Obsolete("Use NetMQPoller instead. This will be removed in NetMQ 4.0.")]
     public class NetMQScheduler : TaskScheduler, IDisposable
     {
         private static int s_schedulerCounter;
@@ -38,7 +38,7 @@ namespace NetMQ
         /// </summary>
         /// <param name="context">the NetMQContext to create this NetMQScheduler within</param>
         /// <param name="poller">(optional)the Poller for this Net to use</param>
-        [Obsolete("Use non context version")]
+        [Obsolete("Use non context version. This will be removed in NetMQ 4.0.")]
         public NetMQScheduler([NotNull] NetMQContext context, [CanBeNull] Poller poller = null) : 
             this(poller, context.CreatePushSocket(), context.CreatePullSocket())
         {

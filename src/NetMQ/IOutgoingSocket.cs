@@ -14,7 +14,7 @@ namespace NetMQ
         /// <param name="msg">the Msg struct that contains the data and the options for this transmission</param>
         /// <param name="options">a SendReceiveOptions value that can specify the DontWait or SendMore bits (or None)</param>
         /// <exception cref="AgainException">The send operation timed out.</exception>
-        [Obsolete("Use Send(ref Msg, bool) or TrySend(ref Msg,TimeSpan, bool) instead.")]
+        [Obsolete("Use Send(ref Msg, bool) or TrySend(ref Msg,TimeSpan, bool) instead. This will be removed in NetMQ 4.0.")]
         void Send(ref Msg msg, SendReceiveOptions options);
 
         /// <summary>

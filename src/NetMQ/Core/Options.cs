@@ -3,19 +3,19 @@
     Copyright (c) 2009-2011 250bpm s.r.o.
     Copyright (c) 2011 VMware, Inc.
     Copyright (c) 2007-2015 Other contributors as noted in the AUTHORS file
-        
+
     This file is part of 0MQ.
-            
+
     0MQ is free software; you can redistribute it and/or modify it under
     the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation; either version 3 of the License, or
     (at your option) any later version.
-            
+
     0MQ is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Lesser General Public License for more details.
-        
+
     You should have received a copy of the GNU Lesser General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -145,7 +145,7 @@ namespace NetMQ.Core
         /// <summary>
         /// Get or set the maximum size of message to handle.
         /// </summary>
-        [Obsolete("Use MaxMessageSize")]
+        [Obsolete("Use MaxMessageSize. This will be removed in NetMQ 4.0.")]
         public long Maxmsgsize
         {
             get { return this.MaxMessageSize; }
@@ -226,7 +226,7 @@ namespace NetMQ.Core
         /// Get or set the timeout for receive operations for this socket.
         /// The default value is -1, which means no timeout.
         /// </summary>
-        [Obsolete("Pass a TimeSpan value directly to socket receive methods instead.")]
+        [Obsolete("Pass a TimeSpan value directly to socket receive methods instead. This will be removed in NetMQ 4.0.")]
         public int ReceiveTimeout { get; set; }
 
         /// <summary>

@@ -177,7 +177,7 @@ namespace NetMQ
         /// <param name="data">the byte-array of data to send</param>
         /// <param name="length">the number of bytes to send from <paramref name="data"/>.</param>
         /// <param name="options">options to control how the data is sent</param>
-        [Obsolete("Use SendFrame or TrySendFrame")]
+        [Obsolete("Use SendFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static void Send([NotNull] this IOutgoingSocket socket, [NotNull] byte[] data, int length, SendReceiveOptions options)
         {
             var msg = new Msg();
@@ -198,7 +198,7 @@ namespace NetMQ
         /// <param name="length">the number of bytes to send</param>
         /// <param name="dontWait">if true, return immediately without waiting for the send operation to complete (optional: default is false)</param>
         /// <param name="sendMore">set this flag to true to signal that you will be immediately sending another message (optional: default is false)</param>
-        [Obsolete("Use SendFrame or TrySendFrame")]
+        [Obsolete("Use SendFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static void Send([NotNull] this IOutgoingSocket socket, [NotNull] byte[] data, int length, bool dontWait = false, bool sendMore = false)
         {
             var options = SendReceiveOptions.None;
@@ -221,7 +221,7 @@ namespace NetMQ
         /// </summary>
         /// <param name="socket">the IOutgoingSocket to transmit on</param>
         /// <param name="data">the byte-array of data to send</param>
-        [Obsolete("Use SendFrame or TrySendFrame")]
+        [Obsolete("Use SendFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static void Send([NotNull] this IOutgoingSocket socket, [NotNull] byte[] data)
         {
             socket.Send(data, data.Length);
@@ -236,7 +236,7 @@ namespace NetMQ
         /// <param name="dontWait">if true, return immediately without waiting for the send operation to complete (optional: default is false)</param>
         /// <returns>a reference to this IOutgoingSocket so that method-calls may be chained together</returns>
         [NotNull]
-        [Obsolete("Use SendMoreFrame or TrySendFrame")]
+        [Obsolete("Use SendMoreFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static IOutgoingSocket SendMore([NotNull] this IOutgoingSocket socket, [NotNull] byte[] data, bool dontWait = false)
         {
             socket.Send(data, data.Length, dontWait, true);
@@ -253,7 +253,7 @@ namespace NetMQ
         /// <param name="dontWait">if true, return immediately without waiting for the send operation to complete (optional: default is false)</param>
         /// <returns>a reference to this IOutgoingSocket so that method-calls may be chained together</returns>
         [NotNull]
-        [Obsolete("Use SendMoreFrame or TrySendFrame")]
+        [Obsolete("Use SendMoreFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static IOutgoingSocket SendMore([NotNull] this IOutgoingSocket socket, [NotNull] byte[] data, int length, bool dontWait = false)
         {
             socket.Send(data, length, dontWait, true);
@@ -525,7 +525,7 @@ namespace NetMQ
         /// <param name="message">a string containing the message to send</param>
         /// <param name="encoding">the Encoding to use when converting the message-string into bytes</param>
         /// <param name="options">use this to specify which of the DontWait and SendMore flags to set</param>
-        [Obsolete("Use SendFrame or TrySendFrame")]
+        [Obsolete("Use SendFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static void Send([NotNull] this IOutgoingSocket socket, [NotNull] string message, [NotNull] Encoding encoding, SendReceiveOptions options)
         {
             var msg = new Msg();
@@ -552,7 +552,7 @@ namespace NetMQ
         /// <param name="encoding">the Encoding to use when converting the message-string into bytes</param>
         /// <param name="dontWait">if true, return immediately without waiting for the send operation to complete (optional: default is false)</param>
         /// <param name="sendMore">set this flag to true to signal that you will be immediately sending another message (optional: default is false)</param>
-        [Obsolete("Use SendFrame or TrySendFrame")]
+        [Obsolete("Use SendFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static void Send([NotNull] this IOutgoingSocket socket, [NotNull] string message, [NotNull] Encoding encoding, bool dontWait = false, bool sendMore = false)
         {
             var options = SendReceiveOptions.None;
@@ -577,7 +577,7 @@ namespace NetMQ
         /// <param name="message">a string containing the message to send</param>
         /// <param name="dontWait">if true, return immediately without waiting for the send operation to complete (optional: default is false)</param>
         /// <param name="sendMore">set this flag to true to signal that you will be immediately sending another message (optional: default is false)</param>
-        [Obsolete("Use SendFrame or TrySendFrame")]
+        [Obsolete("Use SendFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static void Send([NotNull] this IOutgoingSocket socket, [NotNull] string message, bool dontWait = false, bool sendMore = false)
         {
             Send(socket, message, Encoding.ASCII, dontWait, sendMore);
@@ -592,7 +592,7 @@ namespace NetMQ
         /// <param name="dontWait">if true, return immediately without waiting for the send operation to complete</param>
         /// <returns>a reference to this IOutgoingSocket so that method-calls may be chained together</returns>
         [NotNull]
-        [Obsolete("Use SendMoreFrame or TrySendFrame")]
+        [Obsolete("Use SendMoreFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static IOutgoingSocket SendMore([NotNull] this IOutgoingSocket socket, [NotNull] string message, bool dontWait = false)
         {
             socket.Send(message, dontWait, true);
@@ -609,7 +609,7 @@ namespace NetMQ
         /// <param name="dontWait">if true, return immediately without waiting for the send operation to complete (optional: default is false)</param>
         /// <returns>a reference to this IOutgoingSocket so that method-calls may be chained together</returns>
         [NotNull]
-        [Obsolete("Use SendMoreFrame or TrySendFrame")]
+        [Obsolete("Use SendMoreFrame or TrySendFrame. This will be removed in NetMQ 4.0.")]
         public static IOutgoingSocket SendMore([NotNull] this IOutgoingSocket socket, [NotNull] string message, [NotNull] Encoding encoding, bool dontWait = false)
         {
             socket.Send(message, encoding, dontWait, true);
@@ -704,7 +704,7 @@ namespace NetMQ
         /// <param name="socket">the IOutgoingSocket to transmit on</param>
         /// <param name="message">the NetMQMessage that contains the frames of data to send</param>
         /// <param name="dontWait">if true, return immediately without waiting for the send operation to complete (optional: default is false)</param>
-        [Obsolete("Use TrySendMultipartMessage or SendMultipartMessage")]
+        [Obsolete("Use TrySendMultipartMessage or SendMultipartMessage. This will be removed in NetMQ 4.0.")]
         public static void SendMessage([NotNull] this IOutgoingSocket socket, [NotNull] NetMQMessage message, bool dontWait = false)
         {
             for (int i = 0; i < message.FrameCount - 1; i++)

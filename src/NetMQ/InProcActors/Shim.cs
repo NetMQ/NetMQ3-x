@@ -8,7 +8,7 @@ namespace NetMQ.InProcActors
     /// to be supplied with a IShimHandlerOfT that it would use for running the pipe
     /// protocol with the original Actor PairSocket at the other end of the pipe 
     /// </summary>
-    [Obsolete("Use non generic NetMQActor and IShimHandler")]
+    [Obsolete("Use non generic NetMQActor and IShimHandler. This will be removed in NetMQ 4.0.")]
     public class Shim<T>
     {
         /// <summary>

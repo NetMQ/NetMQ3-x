@@ -29,12 +29,12 @@ namespace NetMQ.Monitoring
 
         private readonly ManualResetEvent m_isStoppedEvent = new ManualResetEvent(true);
 
-        [Obsolete("Use overload that takes SocketEvents (plural)")]
+        [Obsolete("Use overload that takes SocketEvents (plural). This will be removed in NetMQ 4.0.")]
         public NetMQMonitor([NotNull] NetMQContext context, [NotNull] NetMQSocket monitoredSocket, [NotNull] string endpoint, SocketEvent eventsToMonitor)
             : this(context, monitoredSocket, endpoint, (SocketEvents)eventsToMonitor)
         {}
 
-        [Obsolete("Use non context version")]
+        [Obsolete("Use non context version. This will be removed in NetMQ 4.0.")]
         public NetMQMonitor([NotNull] NetMQContext context, [NotNull] NetMQSocket monitoredSocket, [NotNull] string endpoint, SocketEvents eventsToMonitor)
         {
             Endpoint = endpoint;

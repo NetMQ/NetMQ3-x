@@ -46,7 +46,7 @@ namespace NetMQ
     public enum MsgType : byte
     {
         /// <summary>The <see cref="Msg"/> has not yet been initialised.</summary>
-        [Obsolete("Use Uninitialised instead")]
+        [Obsolete("Use Uninitialised instead. This will be removed in NetMQ 4.0.")]
         Invalid = 0,
 
         /// <summary>The <see cref="Msg"/> has not yet been initialised (default value).</summary>
@@ -56,7 +56,7 @@ namespace NetMQ
         Empty = 101,
 
         /// <summary>The minimum valid enum value.</summary>
-        [Obsolete]
+        [Obsolete("This will be removed in NetMQ 4.0.")]
         Min = 101,
 
         /// <summary>The <see cref="Msg"/> data will be garbage collected when no longer needed.</summary>
@@ -73,7 +73,7 @@ namespace NetMQ
         Delimiter = 104,
 
         /// <summary>The maximum valid enum value.</summary>
-        [Obsolete]
+        [Obsolete("This will be removed in NetMQ 4.0.")]
         Max = 104
     }
 
@@ -193,7 +193,7 @@ namespace NetMQ
         public byte[] Data { get; private set; }
 
         /// <summary>Get whether this <see cref="Msg"/> is initialised and ready for use.</summary>
-        [Obsolete("Use the IsInitialised property instead")]
+        [Obsolete("Use the IsInitialised property instead. This will be removed in NetMQ 4.0.")]
         public bool Check()
         {
             return IsInitialised;

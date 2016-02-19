@@ -47,7 +47,7 @@ namespace NetMQ
         /// <summary>
         /// Get whether at least one message may be received by the socket without blocking.
         /// </summary>
-        [Obsolete("Use IsReadyToReceive")]
+        [Obsolete("Use IsReadyToReceive. This will be removed in NetMQ 4.0.")]
         public bool ReceiveReady
         {
             get { return IsReadyToReceive; }
@@ -57,7 +57,7 @@ namespace NetMQ
          /// <summary>
         /// Get whether at least one message may be sent by the socket without blocking.
         /// </summary>
-        [Obsolete("Use IsReadyToSend")]
+        [Obsolete("Use IsReadyToSend. This will be removed in NetMQ 4.0.")]
         public bool SendReady
         {
             get { return IsReadyToSend; }
