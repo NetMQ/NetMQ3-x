@@ -33,7 +33,7 @@ namespace NetMQ
     /// This enum-type specifies socket transport events (TCP and IPC only).
     /// </summary>
     [Flags]
-    [Obsolete("Use SocketEvents (plural) instead")]
+    [Obsolete("Use SocketEvents (plural) instead. This will be removed in NetMQ 4.0.")]
     public enum SocketEvent
     {
         Connected = 1,

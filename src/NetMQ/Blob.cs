@@ -29,7 +29,7 @@ namespace NetMQ
     /// Class Blob serves to hold a byte-array buffer and methods for creating and accessing it.
     /// Use NetMQFrame instead; Blob is still present simply for backward compatibility.
     /// </summary>
-    [Obsolete("Use NetMQFrame instead of Blob")]
+    [Obsolete("Use NetMQFrame instead of Blob. This will be removed in NetMQ 4.0.")]
     public class Blob
     {
         [NotNull]
@@ -45,7 +45,7 @@ namespace NetMQ
         {
             m_buffer = new byte[size];
 
-            Buffer.BlockCopy(data, 0, m_buffer, 0, size);            
+            Buffer.BlockCopy(data, 0, m_buffer, 0, size);
         }
 
         /// <summary>

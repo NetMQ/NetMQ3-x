@@ -40,7 +40,7 @@ namespace NetMQ
         /// <summary>
         /// The connection is still in progress.
         /// </summary>
-        [Obsolete("Use InProgress")]
+        [Obsolete("Use InProgress. This will be removed in NetMQ 4.0.")]
         InProgres = 36,
 
         /// <summary>
@@ -148,201 +148,201 @@ namespace NetMQ
         /// <summary>
         /// The provided endpoint is not connected.
         /// </summary>
-        [Obsolete("Use EndpointNotFound")]
+        [Obsolete("Use EndpointNotFound. This will be removed in NetMQ 4.0.")]
         ENOENT = 2,
 
         /// <summary>
         /// The operation was interrupted by a signal.
         /// </summary>
-        [Obsolete("Not in use")]
+        [Obsolete("Not in use. This will be removed in NetMQ 4.0.")]
         EINTR = 4,
 
         /// <summary>
         /// Permission denied
         /// </summary>
-        [Obsolete("Use AccessDenied")]
+        [Obsolete("Use AccessDenied. This will be removed in NetMQ 4.0.")]
         EACCESS = 13,
 
         /// <summary>
         /// The provided context is invalid.
         /// </summary>
-        [Obsolete("Use Fault")]
+        [Obsolete("Use Fault. This will be removed in NetMQ 4.0.")]
         EFAULT = 14,
 
         /// <summary>
         /// The endpoint supplied is invalid.
         /// </summary>
-        [Obsolete("Use Invalid")]
+        [Obsolete("Use Invalid. This will be removed in NetMQ 4.0.")]
         EINVAL = 22,
 
         /// <summary>
         /// Non-blocking mode was requested and the message cannot be sent at the moment.
         /// </summary>
-        [Obsolete("Use TryAgain")]
+        [Obsolete("Use TryAgain. This will be removed in NetMQ 4.0.")]
         EAGAIN = 35,
 
         /// <summary>
         /// The connection is still in progress.
         /// </summary>
-        [Obsolete("Use InProgress")]
+        [Obsolete("Use InProgress. This will be removed in NetMQ 4.0.")]
         EINPROGRESS = 36,
 
         /// <summary>
         /// The requested transport protocol is not supported.
         /// </summary>
-        [Obsolete("Use ProtocolNotSupported")]
+        [Obsolete("Use ProtocolNotSupported. This will be removed in NetMQ 4.0.")]
         EPROTONOSUPPORT = 43,
 
         /// <summary>
         /// That operation is not supported by this socket type.
         /// </summary>
-        [Obsolete("Not in use")]
+        [Obsolete("Not in use. This will be removed in NetMQ 4.0.")]
         ENOTSUP = 45,
 
         /// <summary>
         /// The requested address is already in use.
         /// </summary>
-        [Obsolete("Use AddressAlreadyInUse")]
+        [Obsolete("Use AddressAlreadyInUse. This will be removed in NetMQ 4.0.")]
         EADDRINUSE = 48,
 
         /// <summary>
         /// The requested address was not available.
         /// For Bind operations, that can mean the address was not local.
         /// </summary>
-        [Obsolete("Use AddressNotAvailable")]
+        [Obsolete("Use AddressNotAvailable. This will be removed in NetMQ 4.0.")]
         EADDRNOTAVAIL = 49,
 
         /// <summary>
         /// The network appears to be down.
         /// </summary>
-        [Obsolete("Use NetworkDown")]
+        [Obsolete("Use NetworkDown. This will be removed in NetMQ 4.0.")]
         ENETDOWN = 50,
 
         /// <summary>
         /// There is not enough buffer space for the requested operation.
         /// </summary>
-        [Obsolete("Use NoBufferSpaceAvailable")]
+        [Obsolete("Use NoBufferSpaceAvailable. This will be removed in NetMQ 4.0.")]
         ENOBUFS = 55,
 
         /// <summary>
         /// Unused
         /// </summary>
-        [Obsolete("Not in use")]
+        [Obsolete("Not in use. This will be removed in NetMQ 4.0.")]
         EISCONN = 56,
 
         /// <summary>
         /// The socket is not connected.
         /// </summary>
-        [Obsolete("Use NotConnected")]
+        [Obsolete("Use NotConnected. This will be removed in NetMQ 4.0.")]
         ENOTCONN = 57,
 
         /// <summary>
         /// The connection was refused.
         /// </summary>
-        [Obsolete("Use ConnectionRefused")]
+        [Obsolete("Use ConnectionRefused. This will be removed in NetMQ 4.0.")]
         ECONNREFUSED = 61,
 
         /// <summary>
         /// The host is not reachable.
         /// </summary>
-        [Obsolete("Use HostUnreachable")]
+        [Obsolete("Use HostUnreachable. This will be removed in NetMQ 4.0.")]
         EHOSTUNREACH = 65,
 
         /// <summary>
         /// This is the value chosen for beginning the range of 0MQ error codes.
         /// </summary>
-        [Obsolete("Use BaseErrorNumber")]
+        [Obsolete("Use BaseErrorNumber. This will be removed in NetMQ 4.0.")]
         ZMQ_HAUSNUMERO = BaseErrorNumber,
 
         /// <summary>
         /// The provided socket was invalid.
         /// </summary>
-        [Obsolete("Not in use")]
+        [Obsolete("Not in use. This will be removed in NetMQ 4.0.")]
         ENOTSOCK = BaseErrorNumber + 9,
 
         /// <summary>
         /// The message is too long.
         /// </summary>
-        [Obsolete("Use MessageSize")]
+        [Obsolete("Use MessageSize. This will be removed in NetMQ 4.0.")]
         EMSGSIZE = BaseErrorNumber + 10,
 
         /// <summary>
         /// The address family is not supported by this protocol.
         /// </summary>
-        [Obsolete("Use AddressFamilyNotSupported")]
+        [Obsolete("Use AddressFamilyNotSupported. This will be removed in NetMQ 4.0.")]
         EAFNOSUPPORT = BaseErrorNumber + 11,
 
         /// <summary>
         /// The network is apparently not reachable.
         /// </summary>
-        [Obsolete("Use NetworkUnreachable")]
+        [Obsolete("Use NetworkUnreachable. This will be removed in NetMQ 4.0.")]
         ENETUNREACH = BaseErrorNumber + 12,
 
         /// <summary>
         /// The connection-attempt has apparently been aborted.
         /// </summary>
-        [Obsolete("Use ConnectionAborted")]
+        [Obsolete("Use ConnectionAborted. This will be removed in NetMQ 4.0.")]
         ECONNABORTED = BaseErrorNumber + 13,
 
         /// <summary>
         /// The connection has apparently been reset.
         /// </summary>
-        [Obsolete("Use ConnectionReset")]
+        [Obsolete("Use ConnectionReset. This will be removed in NetMQ 4.0.")]
         ECONNRESET = BaseErrorNumber + 14,
 
         /// <summary>
         /// The operation timed-out.
         /// </summary>
-        [Obsolete("Use TimedOut")]
+        [Obsolete("Use TimedOut. This will be removed in NetMQ 4.0.")]
         ETIMEDOUT = BaseErrorNumber + 16,
 
         /// <summary>
         /// The network was reset.
         /// </summary>
-        [Obsolete("Use NetworkReset")]
+        [Obsolete("Use NetworkReset. This will be removed in NetMQ 4.0.")]
         ENETRESET = BaseErrorNumber + 18,
 
         /// <summary>
         /// The operation cannot be performed on this socket at the moment due
         /// to the socket not being in the appropriate state.
         /// </summary>
-        [Obsolete("Use FiniteStateMachine")]
+        [Obsolete("Use FiniteStateMachine. This will be removed in NetMQ 4.0.")]
         EFSM = BaseErrorNumber + 51,
 
         /// <summary>
         /// The requested transport protocol is not compatible with the socket type.
         /// </summary>
-        [Obsolete("Not in use")]
+        [Obsolete("Not in use. This will be removed in NetMQ 4.0.")]
         ENOCOMPATPROTO = BaseErrorNumber + 52,
 
         /// <summary>
         /// The context associated with the specified socket has already been terminated.
         /// </summary>
-        [Obsolete("Use ContextTerminated")]
+        [Obsolete("Use ContextTerminated. This will be removed in NetMQ 4.0.")]
         ETERM = BaseErrorNumber + 53,
 
         /// <summary>
         /// No I/O thread is available to accomplish this task.
         /// </summary>
-        [Obsolete("Use EmptyThread")]
+        [Obsolete("Use EmptyThread. This will be removed in NetMQ 4.0.")]
         EMTHREAD = BaseErrorNumber + 54,
 
         /// <summary>
         /// Unused
         /// </summary>
-        [Obsolete("Not In Use")]
+        [Obsolete("Not In Use. This will be removed in NetMQ 4.0.")]
         EIOEXC = BaseErrorNumber + 105,
 
         /// <summary>
         /// Unused
         /// </summary>
-        [Obsolete]
+        [Obsolete("This will be removed in NetMQ 4.0.")]
         ESOCKET = BaseErrorNumber + 106,
 
         /// <summary>
         /// Too many sockets for this process.
         /// </summary>
-        [Obsolete("Use TooManyOpenSockets")]
+        [Obsolete("Use TooManyOpenSockets. This will be removed in NetMQ 4.0.")]
         EMFILE = BaseErrorNumber + 107
     }
 }

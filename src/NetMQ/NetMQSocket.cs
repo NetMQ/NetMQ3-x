@@ -367,7 +367,7 @@ namespace NetMQ
         /// <param name="options">Either <see cref="SendReceiveOptions.None"/>, or <see cref="SendReceiveOptions.DontWait"/>.
         /// <see cref="SendReceiveOptions.SendMore"/> is ignored.</param>
         /// <exception cref="AgainException">The receive operation timed out.</exception>
-        [Obsolete("Use Receive(ref Msg) or TryReceive(ref Msg,TimeSpan) instead.")]
+        [Obsolete("Use Receive(ref Msg) or TryReceive(ref Msg,TimeSpan) instead. This will be removed in NetMQ 4.0.")]
         public virtual void Receive(ref Msg msg, SendReceiveOptions options)
         {
             // This legacy method adapts the newer nothrow API to the older AgainException one.
@@ -410,7 +410,7 @@ namespace NetMQ
         /// <exception cref="TerminatingException">The socket has been stopped.</exception>
         /// <exception cref="FaultException"><paramref name="msg"/> is not initialised.</exception>
         /// <exception cref="AgainException">The send operation timed out.</exception>
-        [Obsolete("Use Send(ref Msg, bool) or TrySend(ref Msg,TimeSpan, bool) instead.")]
+        [Obsolete("Use Send(ref Msg, bool) or TrySend(ref Msg,TimeSpan, bool) instead. This will be removed in NetMQ 4.0.")]
         public virtual void Send(ref Msg msg, SendReceiveOptions options)
         {
             bool more = (options & SendReceiveOptions.SendMore) != 0;
@@ -456,7 +456,7 @@ namespace NetMQ
         /// A topic is simply a specific prefix (in the form of a byte-array or the equivalent text).
         /// This is valid only for Subscriber and XSubscriber sockets.
         /// </remarks>
-        [Obsolete("Do not use this method if the socket is different from Subscriber and XSubscriber")]
+        [Obsolete("Do not use this method if the socket is different from Subscriber and XSubscriber. This will be removed in NetMQ 4.0.")]
         public virtual void Subscribe(string topic)
         {
             SetSocketOption(ZmqSocketOption.Subscribe, topic);
@@ -471,7 +471,7 @@ namespace NetMQ
         /// A topic is simply a specific prefix (in the form of a byte-array or the equivalent text).
         /// This is valid only for Subscriber and XSubscriber sockets.
         /// </remarks>
-        [Obsolete("Do not use this method if the socket is different from Subscriber and XSubscriber")]
+        [Obsolete("Do not use this method if the socket is different from Subscriber and XSubscriber. This will be removed in NetMQ 4.0.")]
         public virtual void Subscribe(byte[] topic)
         {
             SetSocketOption(ZmqSocketOption.Subscribe, topic);
@@ -486,7 +486,7 @@ namespace NetMQ
         /// messages of that topic. A topic is simply a specific prefix (in the form of a byte-array or the equivalent text).
         /// This is valid only for Subscriber and XSubscriber sockets.
         /// </remarks>
-        [Obsolete("Do not use this method if the socket is different from Subscriber and XSubscriber")]
+        [Obsolete("Do not use this method if the socket is different from Subscriber and XSubscriber. This will be removed in NetMQ 4.0.")]
         public virtual void Unsubscribe(string topic)
         {
             SetSocketOption(ZmqSocketOption.Unsubscribe, topic);
@@ -501,7 +501,7 @@ namespace NetMQ
         /// messages of that topic. A topic is simply a specific prefix (in the form of a byte-array or the equivalent text).
         /// This is valid only for Subscriber and XSubscriber sockets.
         /// </remarks>
-        [Obsolete("Do not use this method if the socket is different from Subscriber and XSubscriber")]
+        [Obsolete("Do not use this method if the socket is different from Subscriber and XSubscriber. This will be removed in NetMQ 4.0.")]
         public virtual void Unsubscribe(byte[] topic)
         {
             SetSocketOption(ZmqSocketOption.Unsubscribe, topic);
@@ -520,7 +520,7 @@ namespace NetMQ
         /// <exception cref="ProtocolNotSupportedException">The protocol of <paramref name="endpoint"/> is not supported.</exception>
         /// <exception cref="TerminatingException">The socket has been stopped.</exception>
         /// <exception cref="NetMQException">Maximum number of sockets reached.</exception>
-        [Obsolete("Use overload that accepts SocketEvents (plural) instead")]
+        [Obsolete("Use overload that accepts SocketEvents (plural) instead. This will be removed in NetMQ 4.0.")]
         public void Monitor([NotNull] string endpoint, SocketEvent events = SocketEvent.All)
         {
             Monitor(endpoint, (SocketEvents)events);

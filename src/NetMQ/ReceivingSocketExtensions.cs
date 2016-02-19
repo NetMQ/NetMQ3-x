@@ -21,11 +21,11 @@ namespace NetMQ
         /// The <see cref="Encoding"/> used in string related methods that do
         /// not explicitly provide an encoding parameter.
         /// </summary>
-		[Obsolete("Use SendReceiveConstans.DefaultEncoding instead")]
+		[Obsolete("Use SendReceiveConstans.DefaultEncoding instead. This will be removed in NetMQ 4.0.")]
         public static readonly Encoding DefaultEncoding = Encoding.UTF8;
 
         /// <summary>Indicates an infinite timeout for receive operations.</summary>
-		[Obsolete("Use SendReceiveConstans.InfiniteTimeout instead")]
+		[Obsolete("Use SendReceiveConstans.InfiniteTimeout instead. This will be removed in NetMQ 4.0.")]
         public static readonly TimeSpan InfiniteTimeout = TimeSpan.FromMilliseconds(-1);
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace NetMQ
         /// <returns>The message's data as a newly allocated array of bytes.</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead.")]
+        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead. This will be removed in NetMQ 4.0.")]
         public static byte[] Receive([NotNull] this IReceivingSocket socket)
         {
             bool hasMore;
@@ -187,7 +187,7 @@ namespace NetMQ
         /// <returns>The message's data as a newly allocated array of bytes.</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead.")]
+        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead. This will be removed in NetMQ 4.0.")]
         public static byte[] Receive([NotNull] this IReceivingSocket socket, out bool hasMore)
         {
             return socket.Receive(SendReceiveOptions.None, out hasMore);
@@ -202,7 +202,7 @@ namespace NetMQ
         /// <returns>The message's data as a newly allocated array of bytes.</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead.")]
+        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead. This will be removed in NetMQ 4.0.")]
         public static byte[] Receive([NotNull] this IReceivingSocket socket, bool dontWait, out bool hasMore)
         {
             return socket.Receive(dontWait ? SendReceiveOptions.DontWait : SendReceiveOptions.None, out hasMore);
@@ -216,7 +216,7 @@ namespace NetMQ
         /// <returns>The message's data as a newly allocated array of bytes.</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead.")]
+        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead. This will be removed in NetMQ 4.0.")]
         public static byte[] Receive([NotNull] this IReceivingSocket socket, SendReceiveOptions options)
         {
             bool hasMore;
@@ -232,7 +232,7 @@ namespace NetMQ
         /// <returns>The message's data as a newly allocated array of bytes.</returns>
         /// <exception cref="AgainException">No message was available within the allowed timeout period. Try again.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead.")]
+        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead. This will be removed in NetMQ 4.0.")]
         public static byte[] Receive([NotNull] this IReceivingSocket socket, SendReceiveOptions options, out bool hasMore)
         {
             var msg = new Msg();
@@ -259,7 +259,7 @@ namespace NetMQ
         /// <exception cref="FaultException">The internal select operation failed.</exception>
         /// <exception cref="TerminatingException"><paramref name="socket"/> has been stopped.</exception>
         [CanBeNull]
-        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead.")]
+        [Obsolete("Use ReceiveFrameBytes or TryReceiveFrameBytes instead. This will be removed in NetMQ 4.0.")]
         public static byte[] Receive([NotNull] this NetMQSocket socket, TimeSpan timeout)
         {
             var result = socket.Poll(PollEvents.PollIn, timeout);
@@ -389,7 +389,7 @@ namespace NetMQ
         /// an extra allocation will occur, but the result will still be correct.</param>
         /// <returns>A list of all frames of the next message, each as an array of bytes.</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
-        [Obsolete("Use ReceiveMultipartBytes or TryReceiveMultipartBytes instead")]
+        [Obsolete("Use ReceiveMultipartBytes or TryReceiveMultipartBytes instead. This will be removed in NetMQ 4.0.")]
         [NotNull]
         [ItemNotNull]
         public static List<byte[]> ReceiveMessages([NotNull] this IReceivingSocket socket, int expectedFrameCount = 4)
@@ -411,7 +411,7 @@ namespace NetMQ
         /// an extra allocation will occur, but the result will still be correct.</param>
         /// <returns>A list of all frames of the next message, each as an array of bytes.</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
-        [Obsolete("Use ReceiveMultipartBytes or TryReceiveMultipartBytes instead")]
+        [Obsolete("Use ReceiveMultipartBytes or TryReceiveMultipartBytes instead. This will be removed in NetMQ 4.0.")]
         [NotNull]
         [ItemNotNull]
         public static List<byte[]> ReceiveAll([NotNull] this IReceivingSocket socket, int expectedFrameCount = 4)
@@ -646,7 +646,7 @@ namespace NetMQ
         /// <exception cref="AgainException">No message was available within the allowed timeout period. Try again.
         /// </exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket, [NotNull] Encoding encoding, SendReceiveOptions options, out bool hasMore)
         {
             if (encoding == null)
@@ -679,7 +679,7 @@ namespace NetMQ
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket, SendReceiveOptions options, out bool hasMore)
         {
             return socket.ReceiveString(Encoding.ASCII, options, out hasMore);
@@ -695,7 +695,7 @@ namespace NetMQ
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket, SendReceiveOptions options)
         {
             bool hasMore;
@@ -713,7 +713,7 @@ namespace NetMQ
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket, [NotNull] Encoding encoding, SendReceiveOptions options)
         {
             bool hasMore;
@@ -732,7 +732,7 @@ namespace NetMQ
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket, bool dontWait, out bool hasMore)
         {
             return ReceiveString(socket, Encoding.ASCII, dontWait ? SendReceiveOptions.DontWait : SendReceiveOptions.None, out hasMore);
@@ -751,7 +751,7 @@ namespace NetMQ
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket, [NotNull] Encoding encoding, bool dontWait, out bool hasMore)
         {
             return socket.ReceiveString(encoding, dontWait ? SendReceiveOptions.DontWait : SendReceiveOptions.None, out hasMore);
@@ -768,7 +768,7 @@ namespace NetMQ
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket, out bool hasMore)
         {
             return socket.ReceiveString(Encoding.ASCII, SendReceiveOptions.None, out hasMore);
@@ -786,7 +786,7 @@ namespace NetMQ
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket, [NotNull] Encoding encoding, out bool hasMore)
         {
             return socket.ReceiveString(encoding, SendReceiveOptions.None, out hasMore);
@@ -802,7 +802,7 @@ namespace NetMQ
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket, [NotNull] Encoding encoding)
         {
             bool hasMore;
@@ -818,7 +818,7 @@ namespace NetMQ
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
         [NotNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this IReceivingSocket socket)
         {
             bool hasMore;
@@ -839,7 +839,7 @@ namespace NetMQ
         /// <exception cref="FaultException">The internal select operation failed.</exception>
         /// <exception cref="TerminatingException">The socket has been stopped.</exception>
         [CanBeNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this NetMQSocket socket, TimeSpan timeout)
         {
             return socket.ReceiveString(Encoding.ASCII, timeout);
@@ -860,7 +860,7 @@ namespace NetMQ
         /// <exception cref="FaultException">The internal select operation failed.</exception>
         /// <exception cref="TerminatingException">The socket has been stopped.</exception>
         [CanBeNull]
-        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead")]
+        [Obsolete("Use ReceiveFrameString or TryReceiveFrameString methods instead. This will be removed in NetMQ 4.0.")]
         public static string ReceiveString([NotNull] this NetMQSocket socket, [NotNull] Encoding encoding, TimeSpan timeout)
         {
             var result = socket.Poll(PollEvents.PollIn, timeout);
@@ -1030,7 +1030,7 @@ namespace NetMQ
         /// <returns>A list of all frames of the next message, decoded as strings.</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
-        [Obsolete("Use ReceiveMultipartStrings or TryReceiveMultipartStrings instead")]
+        [Obsolete("Use ReceiveMultipartStrings or TryReceiveMultipartStrings instead. This will be removed in NetMQ 4.0.")]
         [NotNull]
         [ItemNotNull]
         public static List<string> ReceiveStringMessages([NotNull] this IReceivingSocket socket, int expectedFrameCount = 4)
@@ -1049,7 +1049,7 @@ namespace NetMQ
         /// <returns>A list of all frames of the next message, decoded as strings.</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
-        [Obsolete("Use ReceiveMultipartStrings or TryReceiveMultipartStrings instead")]
+        [Obsolete("Use ReceiveMultipartStrings or TryReceiveMultipartStrings instead. This will be removed in NetMQ 4.0.")]
         [NotNull]
         [ItemNotNull]
         public static List<string> ReceiveStringMessages([NotNull] this IReceivingSocket socket, [NotNull] Encoding encoding, int expectedFrameCount = 4)
@@ -1067,7 +1067,7 @@ namespace NetMQ
         /// <param name="socket">The socket to receive from.</param>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
-        [Obsolete("Use ReceiveMultipartStrings or TryReceiveMultipartStrings instead")]
+        [Obsolete("Use ReceiveMultipartStrings or TryReceiveMultipartStrings instead. This will be removed in NetMQ 4.0.")]
         [NotNull]
         [ItemNotNull]
         public static IList<string> ReceiveAllString([NotNull] this IReceivingSocket socket)
@@ -1188,7 +1188,7 @@ namespace NetMQ
         /// <param name="dontWait">non-blocking if <c>true</c> and blocking otherwise</param>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
-        [Obsolete("Use ReceiveMultipartMessage or TryReceiveMultipartMessage instead")]
+        [Obsolete("Use ReceiveMultipartMessage or TryReceiveMultipartMessage instead. This will be removed in NetMQ 4.0.")]
         public static void ReceiveMessage([NotNull] this IReceivingSocket socket, [NotNull] NetMQMessage message, bool dontWait = false)
         {
             message.Clear();
@@ -1214,7 +1214,7 @@ namespace NetMQ
         /// <returns>the received message</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
-        [Obsolete("Use ReceiveMultipartMessage or TryReceiveMultipartMessage instead")]
+        [Obsolete("Use ReceiveMultipartMessage or TryReceiveMultipartMessage instead. This will be removed in NetMQ 4.0.")]
         [NotNull]
         public static NetMQMessage ReceiveMessage([NotNull] this IReceivingSocket socket, bool dontWait = false)
         {
@@ -1233,7 +1233,7 @@ namespace NetMQ
         /// <exception cref="FaultException">The internal select operation failed.</exception>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
-        [Obsolete("Use ReceiveMultipartMessage or TryReceiveMultipartMessage instead")]
+        [Obsolete("Use ReceiveMultipartMessage or TryReceiveMultipartMessage instead. This will be removed in NetMQ 4.0.")]
         [CanBeNull]
         public static NetMQMessage ReceiveMessage([NotNull] this NetMQSocket socket, TimeSpan timeout)
         {
@@ -1364,7 +1364,7 @@ namespace NetMQ
         /// <returns>true if that one frame has no bits set other than in the lowest-order byte.</returns>
         /// <exception cref="AgainException">If <paramref name="socket"/> is a <see cref="NetMQSocket"/> and
         /// <see cref="SocketOptions.ReceiveTimeout"/> elapsed.</exception>
-        [Obsolete("User ReceiveSignal or TryReceiveSignal instead")]
+        [Obsolete("User ReceiveSignal or TryReceiveSignal instead. This will be removed in NetMQ 4.0.")]
         public static bool WaitForSignal([NotNull] this IReceivingSocket socket)
         {
             while (true)

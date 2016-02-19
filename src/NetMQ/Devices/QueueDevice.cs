@@ -22,7 +22,7 @@ namespace NetMQ.Devices
         /// <param name="frontendBindAddress">The endpoint used to bind the frontend socket.</param>
         /// <param name="backendBindAddress">The endpoint used to bind the backend socket.</param>
         /// <param name="mode">The <see cref="DeviceMode"/> for the device.</param>
-        [Obsolete("Use non context version")]
+        [Obsolete("Use non context version. This will be removed in NetMQ 4.0.")]
         public QueueDevice(NetMQContext context, string frontendBindAddress, string backendBindAddress, DeviceMode mode = DeviceMode.Threaded)
             : base(context.CreateRouterSocket(), context.CreateDealerSocket(), mode)
         {
@@ -38,7 +38,7 @@ namespace NetMQ.Devices
         /// <param name="frontendBindAddress">The endpoint used to bind the frontend socket.</param>
         /// <param name="backendBindAddress">The endpoint used to bind the backend socket.</param>
         /// <param name="mode">The <see cref="DeviceMode"/> for the device.</param>
-        [Obsolete("Use non context version")]
+        [Obsolete("Use non context version. This will be removed in NetMQ 4.0.")]
         public QueueDevice(NetMQContext context, INetMQPoller poller, string frontendBindAddress, string backendBindAddress, DeviceMode mode = DeviceMode.Threaded)
             : base(poller, context.CreateRouterSocket(), context.CreateDealerSocket(), mode)
         {

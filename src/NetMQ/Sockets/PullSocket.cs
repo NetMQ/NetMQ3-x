@@ -35,7 +35,7 @@ namespace NetMQ.Sockets
         /// <param name="msg">the Msg to transmit</param>
         /// <param name="options">a SendReceiveOptions that may be None, or any of the bits DontWait, SendMore</param>
         /// <exception cref="NotSupportedException">Send must not be called on a PullSocket.</exception>
-        [Obsolete("Use Send(ref Msg, bool) or TrySend(ref Msg,TimeSpan, bool) instead.")]
+        [Obsolete("Use Send(ref Msg, bool) or TrySend(ref Msg,TimeSpan, bool) instead. This will be removed in NetMQ 4.0.")]
         public override void Send(ref Msg msg, SendReceiveOptions options)
         {
             throw new NotSupportedException("Pull socket doesn't support sending");

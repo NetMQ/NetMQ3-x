@@ -10,7 +10,7 @@ namespace NetMQ.Actors
     /// A NetMQActorEventArgs is an EventArgs that also provides an generically-typed Actor property.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    [Obsolete("Use non generic NetMQActor")]
+    [Obsolete("Use non generic NetMQActor. This will be removed in NetMQ 4.0.")]
     public class NetMQActorEventArgs<T> : EventArgs
     {
         /// <summary>
@@ -34,7 +34,7 @@ namespace NetMQ.Actors
     /// the actor may be passed messages, that are sent to the other end of the pipe
     /// which I am calling the "shim"
     /// </summary>
-    [Obsolete("Use non generic NetMQActor")]
+    [Obsolete("Use non generic NetMQActor. This will be removed in NetMQ 4.0.")]
     public class Actor<T> : IOutgoingSocket, IReceivingSocket, ISocketPollable, IDisposable
     {
         private static readonly Random s_rand = new Random();
@@ -207,7 +207,7 @@ namespace NetMQ.Actors
         /// <exception cref="TerminatingException">The socket has been stopped.</exception>
         /// <exception cref="FaultException"><paramref name="msg"/> is not initialised.</exception>
         /// <exception cref="AgainException">The send operation timed out.</exception>
-        [Obsolete("Use Send(ref Msg,bool) or TrySend(ref Msg,TimeSpan,bool) instead.")]
+        [Obsolete("Use Send(ref Msg,bool) or TrySend(ref Msg,TimeSpan,bool) instead. This will be removed in NetMQ 4.0.")]
         public void Send(ref Msg msg, SendReceiveOptions options)
         {
             m_self.Send(ref msg, options);
