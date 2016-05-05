@@ -158,6 +158,7 @@ namespace NetMQ.Devices
 
             FrontendSocket.Close();
             BackendSocket.Close();
+            m_poller.Dispose();
             IsRunning = false;
         }
 

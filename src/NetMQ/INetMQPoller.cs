@@ -1,6 +1,8 @@
+using System;
+
 namespace NetMQ
 {
-    public interface INetMQPoller
+    public interface INetMQPoller : IDisposable
     {
         void Run();
         void RunAsync();
