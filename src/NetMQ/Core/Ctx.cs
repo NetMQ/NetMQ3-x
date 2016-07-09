@@ -36,8 +36,8 @@ namespace NetMQ.Core
     /// <remarks>Internal analog of the public <see cref="NetMQContext"/> class.</remarks>
     internal sealed class Ctx
     {
-        private const int DefaultIOThreads = 1;
-        private const int DefaultMaxSockets = 1024;
+        internal const int DefaultIOThreads = 1;
+        internal const int DefaultMaxSockets = 1024;
 
         #region Nested class: Endpoint
 
@@ -217,8 +217,12 @@ namespace NetMQ.Core
                         foreach (var socket in m_sockets)
                             socket.Stop();
 
-                        if (m_sockets.Count == 0)
-                            m_reaper.Stop();
+                        if (!Block)
+                        {
+                            m_reaper.ForceStop();
+                        }
+                        else if (m_sockets.Count == 0)
+                            m_reaper.Stop();                        
                     }
                     finally
                     {
@@ -234,8 +238,7 @@ namespace NetMQ.Core
 
                     Debug.Assert(found);
                     Debug.Assert(command.CommandType == CommandType.Done);
-                    Monitor.Enter(m_slotSync);
-                    Debug.Assert(m_sockets.Count == 0);
+                    Monitor.Enter(m_slotSync);                
                 }
                 else
                     Monitor.Enter(m_slotSync);
