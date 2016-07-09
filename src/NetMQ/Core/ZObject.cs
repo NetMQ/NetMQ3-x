@@ -125,6 +125,11 @@ namespace NetMQ.Core
             m_ctx.SendCommand(m_threadId, new Command(this, CommandType.Stop));
         }
 
+        protected void SendForceStop()
+        {
+            m_ctx.SendCommand(m_threadId, new Command(this, CommandType.ForceStop));
+        }
+
         /// <summary>
         /// Send the Plug command, incrementing the destinations sequence-number if incSeqnum is true.
         /// </summary>
@@ -322,6 +327,10 @@ namespace NetMQ.Core
                     ProcessReaped();
                     break;
 
+                case CommandType.ForceStop:
+                    ProcessForceStop();
+                    break;
+
                 default:
                     throw new ArgumentException();
             }
@@ -329,6 +338,12 @@ namespace NetMQ.Core
 
         /// <exception cref="NotSupportedException">Not supported on the ZObject class.</exception>
         protected virtual void ProcessStop()
+        {
+            throw new NotSupportedException();
+        }
+
+        /// <exception cref="NotSupportedException">Not supported on the ZObject class.</exception>
+        protected virtual void ProcessForceStop()
         {
             throw new NotSupportedException();
         }
