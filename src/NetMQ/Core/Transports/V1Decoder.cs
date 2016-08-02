@@ -144,7 +144,7 @@ namespace NetMQ.Core.Transports
             long payloadLength = m_tmpbuf.GetLong(Endian, 0);
 
             // There has to be at least one byte (the flags) in the message).
-            if (payloadLength == 0)
+            if (payloadLength <= 0)
             {
                 DecodingError();
                 return false;
