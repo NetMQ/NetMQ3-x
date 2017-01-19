@@ -102,6 +102,29 @@ namespace NetMQ.Core.Transports.Pgm
         /// <param name="bytesTransferred">the number of bytes that were transferred</param>
         public void InCompleted(SocketError socketError, int bytesTransferred)
         {
+            //This case only concerns bound PGM Subscribers after the Ethernet cable has been unplugged (Publisher on same host)
+            //or plugged in again (Publisher on different host).
+            if (socketError == SocketError.Success)
+            {
+                //Check if binding is required
+                if (m_address.InterfaceAddress != null)
+                {
+                    try
+                    {
+                        m_acceptedSocket.Handle.SetSocketOption(PgmSocket.PgmLevel, PgmSocket.RM_ADD_RECEIVE_IF,
+                            m_address.InterfaceAddress.GetAddressBytes());
+                    }
+                    catch
+                    {
+                        // dispose old object      
+                        m_acceptedSocket.Handle.Dispose();
+
+                        Accept();
+                        return;
+                    }
+                }
+            }
+
             if (socketError != SocketError.Success)
             {
                 m_socket.EventAcceptFailed(m_address.ToString(), socketError.ToErrorCode());
