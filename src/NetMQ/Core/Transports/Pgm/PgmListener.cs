@@ -113,7 +113,7 @@ namespace NetMQ.Core.Transports.Pgm
             }
             else
             {
-                //This case only concerns bound PGM Subscribers after the Ethernet cable has been unplugged (Publisher on same host)
+                //This if-case only concerns bound PGM Subscribers after the Ethernet cable has been unplugged (Publisher on same host)
                 //or plugged in again (Publisher on different host).
                 if (m_address.InterfaceAddress != null)
                 {
@@ -126,6 +126,7 @@ namespace NetMQ.Core.Transports.Pgm
                     {
                         // dispose old object      
                         m_acceptedSocket.Handle.Dispose();
+
                         Accept();
                         return;
                     }
